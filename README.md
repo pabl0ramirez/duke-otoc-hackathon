@@ -26,6 +26,19 @@ The graded circuits were hidden and could only be run by id on BlueQubit's cloud
 Samples 300 of 300. Graded 800 of 2700. Total 1100 of 3000. Every attempt and the source of
 each number below is in [results/RECEIPTS.md](results/RECEIPTS.md).
 
+## Augur
+
+Most graded runs were driven by Augur, our in-house estimator, built before the event. It runs
+each circuit up a ladder of simulator settings, trusts a value once successive rungs agree,
+and weighs where the next run is worth spending using what it learned on the open samples. This
+repo holds standalone scripts written for the hackathon, and Augur itself stays private.
+
+The name comes from ancient Rome. An augur was a priest who read the will of the gods from
+signs he could observe, mostly the flight and calls of birds. He never saw the plan itself. He
+watched what was visible and inferred what was hidden. That is the job here too. The graded
+circuits were hidden, so Augur never saw them. It reads what the simulators return and infers
+what a quantum computer would measure.
+
 ## What worked
 
 **Checking methods on known answers.** The samples can be computed exactly (`otoc/exact.py`),
