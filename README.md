@@ -32,7 +32,8 @@ each number below is in [results/RECEIPTS.md](results/RECEIPTS.md).
 Most graded runs were driven by Augur, our in-house estimator, built before the event. It runs
 each circuit up a ladder of simulator settings, trusts a value once successive rungs agree,
 and weighs where the next run is worth spending using what it learned on the open samples. This
-repo holds standalone scripts written for the hackathon, and Augur itself stays private.
+repo holds standalone scripts written for the hackathon. Augur itself is published separately,
+source-available, at [pabl0ramirez/augur](https://github.com/pabl0ramirez/augur).
 
 The name comes from ancient Rome. An augur was a priest who read the will of the gods from
 signs he could observe, mostly the flight and calls of birds. He never saw the plan itself. He
