@@ -2,7 +2,8 @@
 
 We estimated out-of-time-order correlators, the quantity behind Google's Quantum Echoes
 experiment, at the 24-hour BlueQubit x DuQuantum hackathon hosted at Duke University (October 24
-and 25, 2026). There were seven circuits of 4 to 38 qubits. Every circuit has the same echo
+and 25, 2026). There were seven circuits of 4 to 38 qubits. Per the organizers' problem descriptions, and the
+gate counts their API reported (two X gates and one Z on every circuit), all share the same echo
 shape. A random unitary U runs, a butterfly qubit is flipped, U is undone, qubit q is probed,
 and the echo runs again. The answer for circuit `<problem>_q` is <Z_q> at the end. Each problem
 is scored as corr^2 between our values and the organizers' exact ones, so the pattern across
@@ -58,7 +59,7 @@ reading is that low bond dimension under-spreads the butterfly's effect.
 Qubits it has not reached stay at 1, and qubits it has reached fall toward 0. A two-parameter
 front (`otoc/front.py`) fitted to the exact S2 answers matches them at corr^2 0.963, and fitted
 to our final G1 and G2 values matches them at 0.977 and 0.956. The fitted speed differs by
-circuit (0.85, 0.60 and 0.75 sites per layer), so it has to be fitted for each circuit.
+circuit (0.85, 0.60 and 0.75 sites per layer), so here it had to be fitted for each circuit.
 
 **Engineering for the platform.** The hackathon allowed five jobs in flight and refused some
 requests outright (thresholds too small for a circuit, runtimes over its limit, a balance too
@@ -74,8 +75,8 @@ every threshold the platform accepted. On CPU 1e-4 ran and anything finer was re
 that each non-Clifford rotation scales the main Clifford path by a factor below one, so a deep
 enough circuit pushes it under the cutoff and it is dropped. Each U in the 16-layer sample has 71
 non-Clifford gates, applied four times; G3 is deeper and its count is hidden. MPS did not help
-on this family. On the 30-qubit sample, MPS at bond dimension 512 gave 0.0002 where the answer
-is -0.538.
+on this family. On the 30-qubit sample, MPS at bond dimension 512 gave 0.0002 for a qubit whose
+Pauli path value is -0.538, values that scored 100 on that sample.
 
 **G4 (38-qubit Haar grid).** MPS at the bond dimensions we ran (64 to 512) produced a strong
 distance pattern that carried no signal. It scored 0 as is, 0 extrapolated in 1/chi, and 1
@@ -92,8 +93,8 @@ was too small a probe to rule it out.
 ## Reproduce
 
     pip install -r requirements.txt
-    python -m otoc.exact SAMPLE_DIR Duke_S2 16 > s2_exact.csv
-    python -m otoc.front results/Duke_S2_exact.csv 0 12     # v=0.85, corr^2 0.963
+    python -m otoc.exact SAMPLE_DIR Duke_S2 16 > s2_exact.csv   # same values as results/Duke_S2_exact.csv
+    python -m otoc.front s2_exact.csv 0 12                    # v=0.85, corr^2 0.963
     python -m otoc.front results/Duke_G2_final.csv 18 18    # v=0.75, corr^2 0.956
     read -rs BLUEQUBIT_API_TOKEN && export BLUEQUBIT_API_TOKEN
     python -m otoc.queue tasks.txt results.jsonl
