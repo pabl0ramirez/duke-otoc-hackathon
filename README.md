@@ -35,12 +35,6 @@ and weighs where the next run is worth spending using what it learned on the ope
 repo holds standalone scripts written for the hackathon. Augur itself is published separately,
 source-available, at [pabl0ramirez/augur](https://github.com/pabl0ramirez/augur).
 
-The name comes from ancient Rome. An augur was a priest who read the will of the gods from
-signs he could observe, mostly the flight and calls of birds. He never saw the plan itself. He
-watched what was visible and inferred what was hidden. That is the job here too. The graded
-circuits were hidden, so Augur never saw them. It reads what the simulators return and infers
-what a quantum computer would measure.
-
 ## What worked
 
 **Checking methods on known answers.** The samples can be computed exactly (`otoc/exact.py`),
