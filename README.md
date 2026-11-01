@@ -24,7 +24,7 @@ The graded circuits were hidden and could only be run by id on BlueQubit's cloud
 | G3 | 36-qubit grid, Clifford + Rz, 24 layers | 0 / 800 | unsolved |
 | G4 | 38-qubit grid, Haar random, 16 layers | 1 / 1000 | unsolved |
 
-Samples 300 of 300. Graded 800 of 2700. Total 1100 of 3000. Every attempt and the source of
+Samples 300 of 300. Graded 800 of 2700. Total 1100 of 3000. That placed us 41st of the 65 entries on the leaderboard after the event, per our screenshots of [our row](results/leaderboard_our_row.png) and [the last row](results/leaderboard_last_row_name_blurred.png). Every attempt and the source of
 each number below is in [results/RECEIPTS.md](results/RECEIPTS.md).
 
 ## Augur

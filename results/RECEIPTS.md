@@ -3,6 +3,10 @@
 Where each number in the README comes from. Scores are the leaderboard's own, read from the
 submission page after each upload (October 24 and 25, 2026).
 
+## Placement
+
+41st of 65 on the leaderboard after the event, 1100/3000, last submission 25 October 2026 6:15 AM, as shown in our screenshots of [our row](leaderboard_our_row.png) (sha256 634834ccddc8e4b4...) and of [the last row, 65](leaderboard_last_row_name_blurred.png) (sha256 88027a9f7140d8bb...), taken by us after the event. In the second, only that participant's avatar letter and name are blurred; the rank, score, hours, submission count and date are untouched. We could not find a public copy of the leaderboard, so these screenshots are our receipt for the placement.
+
 ## Scores, in submission order
 
 | Problem | Attempts and scores |
